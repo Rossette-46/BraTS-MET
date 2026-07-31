@@ -1,0 +1,31 @@
+# Dependencies for the conversion, ensembling, post-processing and evaluation
+# scripts in bratsmets/.
+#
+# The two segmentation frameworks are NOT listed here: they need separate,
+# mutually incompatible environments and their own CUDA-matched PyTorch builds.
+# Install them as described in the README:
+#     nnU-Net v2 : pip install nnunetv2
+#     MedNeXt    : git clone https://github.com/MIC-DKFZ/MedNeXt && pip install -e .
+
+numpy
+SimpleITK
+scipy
+
+# Optional. Provides a faster 26-connectivity component labeller; scipy.ndimage
+# is used automatically if this is absent.
+connected-components-3d
+
+# --- evaluation only -------------------------------------------------------
+# evaluate_dice.py needs nothing beyond numpy and SimpleITK.
+#
+# evaluate_lesionwise.py additionally needs panoptica and Astarakee/brats_evaluator.
+# Install these in a SEPARATE environment, and pin auxiliary: brats_evaluator
+# leaves it unpinned, and versions from 0.2.0 onward drop an argument its I/O
+# path relies on.
+#     panoptica==1.4.0
+#     auxiliary==0.1.3
+#     pandas
+#     tqdm
+
+# --- figure generation (figures/) ------------------------------------------
+#     matplotlib

@@ -1,0 +1,70 @@
+# =============================================================================
+# BraTS-MET 2026 -- repository exclusions
+# =============================================================================
+# This repository contains CODE ONLY. Challenge imaging data and trained model
+# weights are deliberately excluded: the BraTS data is subject to the
+# challenge's own redistribution terms and must be obtained from the
+# organisers, and the checkpoints are far too large for git. See README.md for
+# where each excluded artefact comes from and how to regenerate it.
+
+# -----------------------------------------------------------------------------
+# Challenge imaging data (~74 GB) -- obtain from the BraTS organisers
+# -----------------------------------------------------------------------------
+MICCAI-LH-BraTS2025-MET-Challenge-TrainingData_batch1/
+MICCAI-LH-BraTS2025-MET-Challenge-ValidationData_batch1/
+MICCAI-LH-BraTS2025-MET-Challenge-corrected-labels_batch1/
+
+# -----------------------------------------------------------------------------
+# nnU-Net / MedNeXt working directories
+#   nnUNet_raw          (37 GB)  derived from the challenge data by convert_to_nnunet.py
+#   nnUNet_preprocessed (164 MB) derived by nnUNetv2_plan_and_preprocess
+#   nnUNet_results      (4.7 GB) trained checkpoints
+#   mednext_v1          (858 MB) MedNeXt raw/preprocessed/RESULTS_FOLDER
+#   MedNeXt             (4.1 MB) upstream MedNeXt package source (install via pip -e)
+# The split files under nnUNet_preprocessed are the exception -- see below.
+# -----------------------------------------------------------------------------
+# The fold definitions themselves ARE tracked -- see splits/ at the repository
+# root, which holds both split files under unambiguous names.
+models/
+
+# -----------------------------------------------------------------------------
+# Local scratch: derived dataset statistics, personal command notes, caches.
+# Regeneratable or not meaningful outside this working copy.
+# -----------------------------------------------------------------------------
+python/
+__pycache__/
+*.pyc
+*.pyo
+
+# -----------------------------------------------------------------------------
+# Model / image artefacts that should never be committed
+# -----------------------------------------------------------------------------
+*.nii
+*.nii.gz
+*.model
+*.pth
+*.npz
+*.npy
+*.b2nd
+*.pkl
+
+# -----------------------------------------------------------------------------
+# Editor / OS / tooling noise
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# staged inference weights for the container build (~1 GB)
+docker/models/
+
+# not part of the published repo (training + inference scope only)
+legacy/
+figures/
+paper/
+
+# container build, not published
+docker/
+.dockerignore
