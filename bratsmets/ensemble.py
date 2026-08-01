@@ -14,15 +14,15 @@ import argparse
 import numpy as np
 import SimpleITK as sitk
 
-MEDNEXT_DIR = "/flash/cbme/phd/bmz258430/BraTS/mednext500all"
-NNUNET_DIR  = "/flash/cbme/phd/bmz258430/BraTS/nnunet500all"
-OUT_DIR     = "/flash/cbme/phd/bmz258430/BraTS/ensemble500all"
+MEDNEXT_DIR = "pathto/mednextpredictdata"
+NNUNET_DIR  = "pathto/nnunetpredictdata"
+OUT_DIR     = "output/path"
 
 RC_LABEL = 4
 
 APPLY_POSTHOC_FILTER = True
 WT_MM3 = 5.0
-RC_MM3 = 27.0
+RC_MM3 = 26.0
 HOLE_MM3 = 15.0
 
 
