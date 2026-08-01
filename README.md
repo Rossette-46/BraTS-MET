@@ -6,7 +6,7 @@ non-enhancing tumour core, surrounding non-enhancing FLAIR hyperintensity,
 enhancing tumour, and — in post-operative studies — the resection cavity.
 
 Input is four co-registered, skull-stripped sequences per study (T1n, T1c, T2w,
-T2-FLAIR). Output is a single label volume in the input's native geometry.
+T2-FLAIR). Output is a label file in the input's native geometry.
 
 ---
 
@@ -137,7 +137,7 @@ them in every new session.
 Trained weights are not distributed; train both networks before running
 inference.
 
-Edit paths in the code before using. 
+Edit paths in the code before using it. 
 ```bash
 conda activate nnunet
 python bratsmets/convert_to_nnunet.py
