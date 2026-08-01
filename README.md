@@ -137,6 +137,7 @@ them in every new session.
 Trained weights are not distributed; train both networks before running
 inference.
 
+Edit paths in the code before using. 
 ```bash
 conda activate nnunet
 python bratsmets/convert_to_nnunet.py
