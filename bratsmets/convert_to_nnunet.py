@@ -11,18 +11,18 @@ import os
 import json
 import shutil
 
-BASE_DIR      = "/flash/cbme/phd/bmz258430/BraTS/MICCAI-LH-BraTS2025-MET-Challenge-TrainingData_batch1/MICCAI-LH-BraTS2025-MET-Challenge-Training/"
+BASE_DIR      = "pathto/dataset"
 UCSD_DIR      = os.path.join(BASE_DIR, "UCSD - Training")
-CORRECTED_DIR = "/flash/cbme/phd/bmz258430/BraTS/MICCAI-LH-BraTS2025-MET-Challenge-corrected-labels_batch1/MICCAI-LH-BraTS2025-MET-Challenge-corrected-labels"
+CORRECTED_DIR = "pathforcorrected/labels"
 
-NNUNET_RAW    = "/flash/cbme/phd/bmz258430/BraTS/nnUNet_raw"
+NNUNET_RAW    = "nnunetraw/path"
 DATASET_NAME  = "Dataset001_BraTSMET"
 
 LINK_MODE = "symlink"  # or "copy"
 
 CHANNEL_ORDER = ["t1n", "t1c", "t2w", "t2f"]  # must match convert_validation.py
 
-EXCLUDE_HARD = {"BraTS-MET-01094-002", "BraTS-MET-01094-003"}  # no corrected label
+EXCLUDE_HARD = {"BraTS-MET-01094-002", "BraTS-MET-01094-003"}  # no corrected label, one file was same after correction. 
 CORRECTED_SUBJECTS = {"BraTS-MET-01184-002"}  # use CORRECTED_DIR instead
 
 LABELS = {
