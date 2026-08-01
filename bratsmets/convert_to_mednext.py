@@ -13,11 +13,11 @@ import os
 import json
 import shutil
 
-BASE_DIR      = "/flash/cbme/phd/bmz258430/BraTS/MICCAI-LH-BraTS2025-MET-Challenge-TrainingData_batch1/MICCAI-LH-BraTS2025-MET-Challenge-Training/"
+BASE_DIR      = "pathtotraining/dataset"
 UCSD_DIR      = os.path.join(BASE_DIR, "UCSD - Training")
-CORRECTED_DIR = "/flash/cbme/phd/bmz258430/BraTS/MICCAI-LH-BraTS2025-MET-Challenge-corrected-labels_batch1/MICCAI-LH-BraTS2025-MET-Challenge-corrected-labels"
+CORRECTED_DIR = "pathtocorrected/dataset"
 
-NNUNET_V1_RAW_DATA_BASE = "/flash/cbme/phd/bmz258430/BraTS/mednext_v1/nnUNet_raw_data_base"
+NNUNET_V1_RAW_DATA_BASE = "pathto/nnunetrawfolder"
 TASK_ID   = 501
 TASK_NAME = f"Task{TASK_ID:03d}_BraTSMET"
 
